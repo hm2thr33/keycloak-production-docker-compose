@@ -6,9 +6,9 @@ services:
     image: quay.io/keycloak/keycloak:latest
     restart: always
     ports:
-      - "8443:8443"
+      - "7443:8443"
     volumes:
-      - "/etc/ssl/keycloak/:/etc/x509/https" # map certificates to container
+      - "./ssl/keycloak/:/etc/x509/https" # map certificates to container
     environment:
       KEYCLOAK_ADMIN: ${KEYCLOAK_USER}
       KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_PASSWORD}
